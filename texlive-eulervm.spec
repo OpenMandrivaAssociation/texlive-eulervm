@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/eulervm
+# catalog-date 2006-12-09 23:51:48 +0100
+# catalog-license lppl
+# catalog-version 4.0
 Name:		texlive-eulervm
 Version:	4.0
 Release:	1
@@ -101,6 +107,7 @@ better with certain text fonts, e.g., Minion.
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unsetams.mtx
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unseteus.mtx
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unsetex.mtx
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -111,3 +118,5 @@ better with certain text fonts, e.g., Minion.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
