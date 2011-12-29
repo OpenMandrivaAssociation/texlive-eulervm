@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 The well-known Euler fonts are suitable for typsetting
@@ -37,20 +34,12 @@ They are compatible with amsmath. A package option allows the
 fonts to be loaded at 95% of their nominal size, thus blending
 better with certain text fonts, e.g., Minion.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -108,7 +97,6 @@ better with certain text fonts, e.g., Minion.
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unsetams.mtx
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unseteus.mtx
 %doc %{_texmfdistdir}/source/latex/eulervm/fontinst/unsetex.mtx
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -119,5 +107,3 @@ better with certain text fonts, e.g., Minion.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
