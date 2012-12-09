@@ -107,3 +107,17 @@ better with certain text fonts, e.g., Minion.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 4.0-2
++ Revision: 751662
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.0-1
++ Revision: 718385
+- texlive-eulervm
+- texlive-eulervm
+- texlive-eulervm
+- texlive-eulervm
+
