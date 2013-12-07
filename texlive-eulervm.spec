@@ -6,7 +6,7 @@
 # catalog-version 4.0
 Name:		texlive-eulervm
 Version:	4.0
-Release:	4
+Release:	5
 Summary:	Euler virtual math fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eulervm
