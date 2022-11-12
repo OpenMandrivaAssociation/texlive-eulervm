@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/eulervm
-# catalog-date 2006-12-09 23:51:48 +0100
-# catalog-license lppl
-# catalog-version 4.0
 Name:		texlive-eulervm
-Version:	4.0
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Euler virtual math fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eulervm
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -35,12 +29,12 @@ fonts to be loaded at 95% of their nominal size, thus blending
 better with certain text fonts, e.g., Minion.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -100,24 +94,11 @@ better with certain text fonts, e.g., Minion.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 4.0-2
-+ Revision: 751662
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.0-1
-+ Revision: 718385
-- texlive-eulervm
-- texlive-eulervm
-- texlive-eulervm
-- texlive-eulervm
-
