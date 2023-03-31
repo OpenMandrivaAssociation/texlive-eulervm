@@ -1,6 +1,6 @@
 Name:		texlive-eulervm
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Euler virtual math fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/eulervm
