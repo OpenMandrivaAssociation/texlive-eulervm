@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Euler virtual math fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/eulervm
+URL:		https://www.ctan.org/tex-archive/fonts/eulervm
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/eulervm.doc.r%{version}.tar.xz
